@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                maven 'mvncfg' {
+                withMaven(maven : 'mvncfg') {
                     sh 'mvn compile'
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage ('Package Stage') {
 
             steps {
-                maven 'mvncfg' {
+                withMaven(maven : 'mvncfg') {
                     sh 'mvn package'
                 }
             }
